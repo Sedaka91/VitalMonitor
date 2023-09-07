@@ -1,0 +1,45 @@
+<html>
+    <head>
+        <link rel="stylesheet" href="main.css"/>
+    </head>
+    <body>   
+
+        <div>
+            <p id="test" class="font-deathstar center" style="font-size: 50px; padding-top: 0px; height: 60px;" onclick="changeFont('death')" ondblclick="changeFont('aura')">- Kyle Katan -</p>
+        </div> 
+        <div class="box">
+            <div class="container">
+                <div class="back">
+                    <video class="heartbeat" autoplay muted loop width="560" style="padding-left: 20px; padding-top: 80px;">
+                        <source src="heartbeat.mp4" type="video/mp4"></source>
+                    </video>            
+                </div>
+                <div class="front">            
+                    <img src="./border.png" width="100%" height="70%"/>
+                </div>             
+            </div>   
+        </div>
+        <div class="box" style="margin-top: 20px">       
+                <button class="button" onclick="window.location.href='Galaxy_Map_Gaslin.svg';">MAP</button> 
+                <button class="button" onclick="window.location.href='https://holonet.outerrimev.de/start/';">HOLONET</button> 
+                <br>
+                <p class="button" id="o2" >O2-Sat: </p>
+
+
+        </div>
+    </body>
+</html>
+
+<script>        
+    setInterval(refresh_o2, 500);
+
+    function refresh_o2(){
+        var per = Math.floor(Math.random() * 5)+95
+        document.getElementById("o2").innerHTML="O2-Sat: "+per+"%";
+    }
+    function changeFont(info){
+       if (info == "death") document.getElementById("test").classList.replace("font-deathstar", "font-aura");
+       else document.getElementById("test").classList.replace("font-aura", "font-deathstar");
+        console.log("test");
+    }
+</script>
